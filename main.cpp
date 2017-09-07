@@ -7,12 +7,14 @@ int main() {
 	std::uniform_int_distribution<int> dist(0, 100);
 	int secret = dist(mt);
 	bool guessed = false;
+	int turns = 0;
 	while (!guessed) {
 		std::cout << "Guess a number from 0 to 100: ";
 		int guess;
 		std::cin >> guess;
+		++turns;
 		if (guess == secret) {
-			std::cout << "RIGHT!\n";
+			std::cout << "RIGHT!\nIt took " << turns << " turns to guess the right number.\n";
 			guessed = true;
 		}
 		else if (guess > secret) {
