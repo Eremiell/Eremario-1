@@ -15,8 +15,11 @@ int main() {
 			std::cout << "RIGHT!\n";
 			guessed = true;
 		}
+		else if (guess > secret) {
+			std::cout << "LOWER!\n";
+		}
 		else {
-			std::cout << "WRONG!\n";
+			std::cout << "GREATER!\n";
 		}
 	}
 	return 0;
