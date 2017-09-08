@@ -5,7 +5,7 @@
 
 void view(std::vector<std::string> &list) {
 	for (std::size_t i = 0; i < list.size(); ++i) {
-		std::cout << '[' << i << "] " << list.at(i) << '\n';
+		std::cout << '[' << (i + 1) << "] " << list.at(i) << '\n';
 	}
 	return;
 }
@@ -23,8 +23,8 @@ void del(std::vector<std::string> &list) {
 	std::cout << "Enter item number to delete: ";
 	std::size_t item;
 	std::cin >> item;
-	if (item < list.size()) {
-		list.erase(list.begin() + item);
+	if (item <= list.size() && item > 0) {
+		list.erase(list.begin() + item - 1);
 	}
 	else {
 		std::cout << "Wrong item number: " << item << "\n";
